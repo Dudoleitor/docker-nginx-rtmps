@@ -1,6 +1,6 @@
 ##################################################################
-# Script Name	  : docker-start.sh
-# Description	  : Used to start both nginx and stunnel
+# Script Name	: docker-start.sh
+# Description	: Used to start both nginx and stunnel
 # Args          : none
 # Author       	: dudoleitor
 # Email         : dudoleitor@dudoleitor.com
