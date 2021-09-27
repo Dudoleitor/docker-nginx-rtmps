@@ -6,7 +6,7 @@ Using this container you can stream simultaneously to multiple rtmps destination
 
 ## Description
 ### Use cases
-A lot of streaming software (such as the popular [OBS](https://obsproject.com/)) is capable of streaming to a single destination and you may have the need to publish your live to more than just one social network at the same time. Sure you can install a plugin to accomplish this, but you are increasing the load on the same hardware that is already under stress.
+A lot of streaming software (such as the popular [OBS](https://obsproject.com/)) is capable of streaming to a single destination only and you may have the need to publish your live to more than just one social network at the same time. Sure you can install a plugin to accomplish this, but you are increasing the load on the same hardware that is already under stress.
 In addition to this, you can use a docker container to split the stream coming from dedicated video switchers that may not support multiple destinations (for example the [ATEM Mini by Blackmagic](https://www.blackmagicdesign.com/products/atemmini)).
 
 ### What does the container do
@@ -17,7 +17,7 @@ Inside the docker container runs [nginx](https://www.nginx.com/), a popular *web
 ## How to use
 0. First of all, open Youtube and Facebook live
 1. Paste your streaming keys into the proper configuration file: download [`nginx.conf`](https://github.com/Dudoleitor/docker-nginx-rtmps/blob/main/nginx.conf) (`wget https://raw.githubusercontent.com/Dudoleitor/docker-nginx-rtmps/main/nginx.conf`) and open it with your favourite text editor (`nano nginx.conf`)
-  - Replace `YouTube_key_here` and `Facebook_key_here` accordingly (withoute the `/` at the end!)
+  - Replace `YouTube_key_here` and `Facebook_key_here` accordingly (without the `/` at the end!)
 2. Now start the container mouting the file you just edited and forwarding the input port 1935 tcp:
 ```bash
   docker run -d -p 1935:1935 -v /path/to/edited/file/nginx.conf:/usr/local/nginx/conf/nginx.conf:ro dudoleitor/nginx-rtmps
