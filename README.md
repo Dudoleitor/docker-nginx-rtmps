@@ -46,7 +46,7 @@ The container is pushing the feed to *rtmps://a.rtmps.youtube.com:443/live2* and
 If you need to change the default behaviour, follow this steps:
 1. Download and edit the [stunnel.conf](https://github.com/Dudoleitor/docker-nginx-rtmps/blob/main/build-scripts/stunnel.conf) file, you can change the destination servers and/or add another service
 2. Edit the [nginx configuration](https://github.com/Dudoleitor/docker-nginx-rtmps/blob/main/nginx.conf), you need a *push* directive for each destination (use ports 1935x for the local sockets, matching the stunnel configuration); if you do not want to use rtmps (defaulting to rtmp) skip the stunnel part and configure the final url directly in the nginx.conf file
-3. Download the [Dockerfile](https://github.com/Dudoleitor/docker-nginx-rtmps/blob/main/build-scripts/Dockerfile) and build your custom image with `docker build -t yourImageName /path/to/Dockerfile`, be sure to have the *stunnel.conf* file in your working directory
+3. Download the [Dockerfile](https://github.com/Dudoleitor/docker-nginx-rtmps/blob/main/build-scripts/Dockerfile) and the [docker-start.sh](https://github.com/Dudoleitor/docker-nginx-rtmps/blob/main/build-scripts/docker-start.sh) file, build your custom image with `docker build -t yourImageName /path/to/Dockerfile`, be sure to have the *stunnel.conf* and *docker-start.sh* files in your working directory
 4. Start the container replacing *dudoleitor/nginx-rtmps* with your custom image name.
 
 
