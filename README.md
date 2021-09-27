@@ -59,3 +59,7 @@ Because of this this, I decided to develop a docker container capable of dealing
 ### Useful links
 I was inspired by this [project](https://github.com/tiangolo/nginx-rtmp-docker) from [Sebastián Ramírez @tiangolo](https://github.com/tiangolo); [this guide](https://www.nginx.com/blog/video-streaming-for-remote-learning-with-nginx/) on the official nginx blog helped me install and configure nginx. If you need to understand how the link between nginx and stunnel work, I suggest to check you [this article](https://dev.to/lax/rtmps-relay-with-stunnel-12d3) on dev.to.
 
+
+## License
+This project is licensed under the terms of the MIT License.
+
