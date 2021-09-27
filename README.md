@@ -19,7 +19,7 @@ Inside the docker container runs [nginx](https://www.nginx.com/), a popular *web
 1. Paste your streaming keys into the proper configuration file: download [`nginx.conf`](https://github.com/Dudoleitor/docker-nginx-rtmps/blob/main/nginx.conf) (`wget https://raw.githubusercontent.com/Dudoleitor/docker-nginx-rtmps/main/nginx.conf`) and open it with your favourite text editor (`nano nginx.conf`)
   - Replace `YouTube_key_here` and `Facebook_key_here` accordingly (withoute the `/` at the end!)
 2. Now start the container mouting the file you just edited and forwarding the input port 1935 tcp:
-```
+```bash
   docker run -d -p 1935:1935 -v /path/to/edited/file/nginx.conf:/usr/local/nginx/conf/nginx.conf:ro dudoleitor/nginx-rtmps
 ```
 3. Configure your streaming software and start the live feed:
@@ -35,7 +35,7 @@ Please be aware that any connection to *rtmp://yourip/live* will be accepted by 
 
 ### Throubleshooting
 If you need to open a shell inside the container while it's running, first get the instance name using `docker ps` and then run
-```
+```bash
 docker exec -it containerID bash
 ```
 
@@ -57,7 +57,7 @@ On the internet there are a lot of examples and guides to help you split a video
 Because of this this, I decided to develop a docker container capable of dealing with multple streams and rtmps. Why a docker container? In this case, because it's very easy to start it, just have a few lines of configuration and it can be up and running within minutes.
 
 ### Useful links
-I was inspired by this [project](https://github.com/tiangolo/nginx-rtmp-docker) from [Sebastián Ramírez @tiangolo](https://github.com/tiangolo); [this guide](https://www.nginx.com/blog/video-streaming-for-remote-learning-with-nginx/) on the official nginx blog helped me install and configure nginx. If you need to understand how the link between nginx and stunnel work, I suggest to check you [this article](https://dev.to/lax/rtmps-relay-with-stunnel-12d3) on dev.to.
+I was inspired by this [project](https://github.com/tiangolo/nginx-rtmp-docker) from [Sebastián Ramírez @tiangolo](https://github.com/tiangolo); [this guide](https://www.nginx.com/blog/video-streaming-for-remote-learning-with-nginx/) on the official nginx blog helped me install and configure nginx. If you need to understand how the link between nginx and stunnel work, I suggest you to check out [this article](https://dev.to/lax/rtmps-relay-with-stunnel-12d3) on dev.to.
 
 
 ## License
