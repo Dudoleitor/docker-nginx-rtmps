@@ -36,7 +36,7 @@ Please be aware that any connection to *rtmp://yourip/live* will be accepted by 
 ### Throubleshooting
 If you need to open a shell inside the container while it's running, first get the instance name using `docker ps` and then run
 ```
-docker exec -it instanceID bash
+docker exec -it containerID bash
 ```
 
 
