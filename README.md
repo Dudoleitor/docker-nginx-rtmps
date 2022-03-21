@@ -33,7 +33,7 @@ Inside the docker container runs [nginx](https://www.nginx.com/), a popular *web
 ### Security note!
 Please be aware that any connection to *rtmp://yourip/live* will be accepted by nginx, this means anyone can connect to your stream without proper security measures. You could edit the configuration file to set up a custom input streaming key or configure the firewall to allow only trusted IPs.
 
-### Throubleshooting
+### Troubleshooting
 If you need to open a shell inside the container while it's running, first get the instance name using `docker ps` and then run
 ```bash
 docker exec -it containerID bash
